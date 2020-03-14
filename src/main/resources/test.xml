@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--suppress ALL -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean name="move1" class="taobq.spring.bean.Movie">
+        <property name="name" value="transformer"></property>
+        <property name="director" value="famous"></property>
+    </bean>
+
+    <bean name="customer" class="taobq.spring.bean.Customer">
+        <property name="age" value="18"></property>
+        <property name="name" value="jerry"></property>
+        <property name="movie" ref="move1"></property>
+    </bean>
+</beans>
