@@ -7,7 +7,7 @@ config:
   kafka.group.id: ue_flink_group_id_16
   kafka.bootstrap.servers: "172.18.1.51:9092,172.18.1.52:9092,172.18.1.53:9092,172.18.1.54:9092,172.18.1.55:9092,172.18.1.63:9092,172.18.1.64:9092,172.18.1.65:9092,172.18.1.66:9092,172.18.1.67:9092,172.18.1.75:9092,172.18.1.76:9092,172.18.1.77:9092,172.18.1.78:9092,172.18.1.79:9092,172.18.1.87:9092,172.18.1.88:9092,172.18.1.89:9092,172.18.1.90:9092,172.18.1.91:9092"
 #  kafka.topic.names: "r_lte_s1mme,r_lte_http,r_lte_g,r_lte_rtsp,r_lte_email"
-  kafka.topic.names: "r_lte_s1mme,r_lte_http,r_lte_g"
+  kafka.topic.names: ["r_lte_s1mme","r_lte_http","r_lte_g"]
   kafka.key.deserializer: org.apache.kafka.common.serialization.ByteArrayDeserializer
   kafka.value.deserializer: org.apache.kafka.common.serialization.ByteArrayDeserializer
   kafka.auto.offset.reset: latest
@@ -23,6 +23,7 @@ config:
 
 
 includes:
-  - "flink/serializer.yaml"
-  - "flink/redisClusterPool.yaml"
-  - 10.122.13.44
+  - "serializer.yaml"
+  - "jedisPool.yaml"
+
+delimiter: |

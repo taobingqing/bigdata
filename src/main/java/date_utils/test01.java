@@ -68,13 +68,13 @@ public class test01 {
         //获取小时
         System.out.println(dateTime.hourOfDay().get());
         Date latestTime = dateTime.toDate();
-        System.out.println("latesttime :"+latestTime);
+        System.out.println("latesttime :" + latestTime);
         //返回 时间戳毫秒数
         long time = latestTime.getTime();
         System.out.println(time);
 
         Date date = new DateTime(time).plusHours(1).toDate();
-        System.out.println("date : "+date);
+        System.out.println("date : " + date);
         System.out.println(date.after(latestTime));
     }
 
@@ -82,7 +82,7 @@ public class test01 {
      * 测试 现网 DateUtils
      */
     @Test
-    public void test05(){
+    public void test05() {
         //formatToMm1 取当前时间 没有四舍五入
         String s = date_utils.DateUtils.formatToMm1(System.currentTimeMillis());
         System.out.println(s);
@@ -91,13 +91,30 @@ public class test01 {
         System.out.println(s1);
 
         MutableDateTime mutableDateTime = new MutableDateTime(System.currentTimeMillis());
-        mutableDateTime.hourOfDay();
+        MutableDateTime roundFloor = mutableDateTime.minuteOfHour().roundFloor();
+        System.out.println(roundFloor);
         String s2 = mutableDateTime.toString("yyMMddHHmm");
         System.out.println(s2);
     }
 
     @Test
-    public void  test06(){
+    public void test06() {
+
+        String s = TimeHelper.replaceTimePlaceHolder(System.currentTimeMillis(), "select \n" +
+                "user_name,\n" +
+                "vlanid2,\n" +
+                "vlanid,\n" +
+                "bras_ip,\n" +
+                "acct_start_time,\n" +
+                "acct_stop_time \n" +
+                "from spark_odc_data.d_enl_radius_union_h\n" +
+                "where p_hour >= '#{time yyyyMMdd00}' and p_hour < '#{time+1d yyyyMMdd00}';");
+        System.out.println(s);
+    }
+
+    @Test
+    public void tesst07() {
+        System.out.println(2 | 8);
     }
 
 }

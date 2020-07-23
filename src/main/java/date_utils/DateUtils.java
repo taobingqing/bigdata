@@ -6,10 +6,14 @@ import org.joda.time.MutableDateTime;
 import org.joda.time.chrono.CopticChronology;
 import org.joda.time.field.DividedDateTimeField;
 import org.joda.time.format.DateTimeFormat;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.concurrent.TimeUnit;
 
 public class DateUtils {
+
+//	public static final Logger logger = LoggerFactory.getLogger(DateUtils.class);
 
 	public final static int Data_Live_Seconds = 1 * 12 * 60 * 60;
 

@@ -1,0 +1,12 @@
+config:
+    topology.kryo.register:
+        - com.eastcom.pm.stream.sh.nx_2_4.Oseurbn.Oseurbn_HTTP: com.eastcom.pm.stream.sh.nx_2_4.Oseurbn.serializer.Oseurbn_HTTPSerializer
+        - com.eastcom.pm.stream.sh.nx_2_4.Oseurbn.Oseurbn_GENERAL: com.eastcom.pm.stream.sh.nx_2_4.Oseurbn.serializer.Oseurbn_GENERALSerializer
+        - com.eastcom.pm.stream.sh.nx_2_4.Oseurbn.Oseurbn_DNS: com.eastcom.pm.stream.sh.nx_2_4.Oseurbn.serializer.Oseurbn_DNSSerializer
+        - com.eastcom.pm.stream.sh.nx_2_4.Oseurbn.Oseurbn_EMAIL: com.eastcom.pm.stream.sh.nx_2_4.Oseurbn.serializer.Oseurbn_EMAILSerializer
+        - com.eastcom.pm.stream.sh.nx_2_4.Oseurbn.Oseurbn_FTP: com.eastcom.pm.stream.sh.nx_2_4.Oseurbn.serializer.Oseurbn_FTPSerializer
+        - com.eastcom.pm.stream.sh.nx_2_4.Oseurbn.Oseurbn_P2P: com.eastcom.pm.stream.sh.nx_2_4.Oseurbn.serializer.Oseurbn_P2PSerializer
+        - com.eastcom.pm.stream.sh.nx_2_4.Oseurbn.Oseurbn_RTSP: com.eastcom.pm.stream.sh.nx_2_4.Oseurbn.serializer.Oseurbn_RTSPSerializer
+        - com.eastcom.pm.stream.sh.nx_2_4.Oseurbn.Oseurbn_VOIP: com.eastcom.pm.stream.sh.nx_2_4.Oseurbn.serializer.Oseurbn_VOIPSerializer
+        - net.agkn.hll.HLL: com.eastcom.pm.stream.sh.nx_2_4.storm.serializer.HLLSerializer
+        - "[Ljava.lang.Object;": "com.esotericsoftware.kryo.serializers.DefaultArraySerializers$ObjectArraySerializer"

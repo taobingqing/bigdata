@@ -47,8 +47,10 @@ public class RegexMatches {
 //        }
 
         while (matcher.find()) {
-            System.out.println("Group 0:" + matcher.group(0));//得到第0组——整个匹配
+            System.out.println("group : "+ matcher.group());
+            System.out.println("Group 0: " + matcher.group(0));//得到第0组——整个匹配
             System.out.println("Group 1:" + matcher.group(1));//得到第一组匹配——与(or)匹配的
+            System.out.println("group 2 :" + matcher.group(2));
             System.out.println("Start 0:" + matcher.start(0) + " End 0:" + matcher.end(0));//总匹配的索引
             System.out.println("Start 1:" + matcher.start(1) + " End 1:" + matcher.end(1));//第一组匹配的索引
             System.out.println("#! imei:tacs".substring(matcher.start(0), matcher.end(1)));//从总匹配开始索引到第1组匹配的结束索引之间子串——Wor
@@ -87,12 +89,12 @@ public class RegexMatches {
 
         String[] split2 = input.split("\\|");
 
-        if (Integer.parseInt(split2[10])>0){
-            int i = split2[7].indexOf("{");
-            int i1 = split2[7].indexOf("}");
+        if (Integer.parseInt(split2[9])>0){
+            int i = split2[6].indexOf("{");
+            int i1 = split2[6].indexOf("}");
             // System.out.println(i);
             //System.out.println(i1);
-            String substring = split2[7].substring(i + 1, i1);
+            String substring = split2[6].substring(i + 1, i1);
             //System.out.println(substring);
             String[] split = substring.split("\\)", -1);
             for (String s : split) {

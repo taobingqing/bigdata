@@ -24,7 +24,7 @@ public class Test02 {
          */
         String s = "aabb";
         char[] a = new char[4];
-        s.getChars(0, 4,a,0);
+        s.getChars(0, 4, a, 0);
         for (char c : a) {
             System.out.println(c);
         }
@@ -37,7 +37,7 @@ public class Test02 {
          * 拼接数组
          */
         //apache 的 common.lang的StringUtils
-        String[] b ={"a","b","c"};
+        String[] b = {"a", "b", "c"};
         String join = StringUtils.join(b, "|");
         System.out.println(join);
 
@@ -60,16 +60,15 @@ public class Test02 {
          */
         Runtime runtime = Runtime.getRuntime();
         Process exec = runtime.exec("D:\\工具\\jdk\\jd-gui.exe");
-        InputStream fis=exec.getInputStream();
+        InputStream fis = exec.getInputStream();
         //用一个读输出流类去读
-        InputStreamReader isr=new InputStreamReader(fis);
+        InputStreamReader isr = new InputStreamReader(fis);
         //用缓冲器读行
-        BufferedReader br=new BufferedReader(isr);
-        String line=null;
+        BufferedReader br = new BufferedReader(isr);
+        String line = null;
         //直到读完为止
         System.out.println("开始读取");
-        while((line=br.readLine())!=null)
-        {
+        while ((line = br.readLine()) != null) {
             System.out.println("br 不等与 null");
             System.out.println(line);
 
@@ -78,9 +77,22 @@ public class Test02 {
         System.out.println(runtime);
 
         System.out.println("============================");
-        while (true){
+        while (true) {
             System.out.println(new Random().nextInt(100));
             TimeUnit.SECONDS.sleep(1);
         }
+    }
+
+
+     class Son extends Father {
+
+         @Override
+         public void test() {
+
+         }
+     }
+
+    abstract class Father {
+        public abstract void test();
     }
 }

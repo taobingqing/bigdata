@@ -1,0 +1,17 @@
+config:
+  jedis.pubsub.sentinels: 
+    - 10.11.94.155:6651
+    - 10.11.94.162:6651
+    - 10.11.94.168:6651
+    - 10.11.94.175:6651
+    - 10.11.94.206:6651
+    - 10.11.94.209:6651
+    - 10.11.94.212:6651
+  jedis.pubsub.master:  cluster01-1
+  jedis.pubsub.password: stream!23$
+  
+  jedis.pool.zookeeper.address: "10.11.122.136:2181,10.11.122.137:2181,10.11.122.138:2181,10.11.122.139:2181,10.11.122.140:2181,10.11.122.141:2181,10.11.122.142:2181"
+  jedis.pool.zookeeper.timeout: 10000
+  jedis.pool.cluster: cluster01
+  jedis.pool.password: 'stream!23$'
+  jedis.pool.maxtotal: 200

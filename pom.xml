@@ -6,25 +6,37 @@
     <packaging>pom</packaging>
 
 
-    <modules>
-        <module>bigdata-spark</module>
-        <module>bigdata-flink</module>
-    </modules>
-
     <profiles>
         <profile>
             <id>COMMON</id>
-            <!--  -->
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
 
             <properties>
+                <spark.version>1.6.0</spark.version>
+                <jedis.version>2.9.0</jedis.version>
+                <scala.version>2.11.0</scala.version>
             </properties>
-
             <modules>
                 <module>bigdata-common</module>
             </modules>
+        </profile>
+
+        <profile>
+            <id>BIGDATA-CORE</id>
+            <modules>
+                <module>bigdata-spark</module>
+                <module>bigdata-flink</module>
+                <module>bigdata-springboot</module>
+
+            </modules>
+
+            <properties>
+                <spark.version>1.6.0</spark.version>
+                <jedis.version>2.9.0</jedis.version>
+                <scala.version>2.11.0</scala.version>
+            </properties>
         </profile>
 
     </profiles>
@@ -32,18 +44,13 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.4.3.RELEASE</version>
+        <version>2.1.8.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <properties>
-        <spark.version>1.6.0</spark.version>
-        <jedis.version>2.9.0</jedis.version>
-        <scala.version>2.11.0</scala.version>
-    </properties>
 
     <groupId>com.cn.bigdata</groupId>
-    <artifactId>bigdata</artifactId>
+    <artifactId>Bigdata-Test</artifactId>
     <version>1.0</version>
     <!-->1.0-SNAPSHOT<-->
     <build>

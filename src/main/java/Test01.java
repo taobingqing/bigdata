@@ -1,17 +1,15 @@
-import clojure.lang.IFn;
 import com.google.common.base.Charsets;
 import com.google.common.hash.HashFunction;
 import com.google.common.hash.Hashing;
 import com.google.gson.Gson;
-import com.jcraft.jsch.HASH;
-import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.math.NumberUtils;
-import org.apache.kafka.common.utils.ByteUtils;
-import org.joda.time.DateTime;
 import org.junit.Test;
 import redis.clients.util.SafeEncoder;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.lang.management.ManagementFactory;
 import java.lang.management.RuntimeMXBean;
 import java.math.BigDecimal;
@@ -139,6 +137,7 @@ public class Test01 {
 
     @Test
     public void test07() {
+        System.out.println(1 / 5f);
         double ceil = Math.ceil(1 / 5f);
         System.out.println(ceil);
 
@@ -167,6 +166,8 @@ public class Test01 {
 
         }
         System.out.println("jie  shu ");
+        //300000ms
+        System.out.println(TimeUnit.MINUTES.toMillis(5));
     }
 
     /**
@@ -349,6 +350,8 @@ public class Test01 {
 
         String format = new DecimalFormat("0").format(d2);
         System.out.println(format);
+        boolean s = !"s".equals("s") || d1.compareTo(d2)!=0;
+        System.out.println(s);
 
     }
 
@@ -528,6 +531,15 @@ public class Test01 {
         String s = null;
         checkArgument(s != null);
         System.out.println("走到这一步");
+    }
+
+    /**
+     *   0xff & 的作用
+     */
+    @Test
+    public void test29(){
+        System.out.println((0xff & 0x80 )== 128);
+
     }
 
     public class CodisProxyInfo {

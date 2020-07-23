@@ -1,0 +1,13 @@
+{
+  "schema": "#{table.schema}",
+  "tableName": "#{table.name}",
+  "hdfsPath": "#{hive.default.db.path}/#{table.schema}/exp_#{table.name}/#{partition.name}=#{partition.value}",
+  "ftpPath": "ftp://#{ftp.export.host}#{export.path}",
+  "ftpUser": "#{ftp.export.user}",
+  "ftpPass": "#{ftp.export.password}",
+  "fileName": "#{filename.prefix}#{filename.starttime}-#{filename.endtime}.csv-{SN}",
+  "fileSize": "2G",
+  "compress": 1,
+  "catalogId": "#{catalog.id}",
+  "serviceCode": "#{service.code}"
+}

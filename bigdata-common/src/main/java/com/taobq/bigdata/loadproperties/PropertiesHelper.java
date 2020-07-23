@@ -1,4 +1,4 @@
-package loadproperties;
+package com.taobq.bigdata.loadproperties;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
@@ -153,8 +153,8 @@ public class PropertiesHelper {
         loadClasspathFile(PropertiesHelper.class, "conf/conf-test01");
 
         System.out.println("=======================");
-        //Class.forName("loadproperties.PropertiesHelper" 要加 包名
-        Properties properties1 = getProperties(Class.forName("loadproperties.PropertiesHelper"), "conf/conf-test01");
+        //Class.forName("com.taobq.bigdata.loadproperties.PropertiesHelper" 要加 包名
+        Properties properties1 = getProperties(Class.forName("com.taobq.bigdata.loadproperties.PropertiesHelper"), "conf/conf-test01");
         String aaa = properties1.getProperty("aaa");
         System.out.println(aaa);
     }

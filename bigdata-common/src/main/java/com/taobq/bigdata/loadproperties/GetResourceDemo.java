@@ -1,4 +1,4 @@
-package loadproperties;
+package com.taobq.bigdata.loadproperties;
 
 import org.junit.Test;
 

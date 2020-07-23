@@ -1,6 +1,7 @@
 package thread_exchange;
 
 import java.util.concurrent.Exchanger;
+import java.util.concurrent.TimeUnit;
 
 public class ExchangerDemo {
 
@@ -10,14 +11,29 @@ public class ExchangerDemo {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                String a = "我买了鸡翅包饭！";
-                System.out.println(Thread.currentThread().getName() + "说：" + a);
-                try {
-                    System.out.println(Thread.currentThread().getName() + "说：等着b买汉堡！");
-                    exchanger.exchange(a);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+                while (true){
+                    String a = "我买了鸡翅包饭！";
+                    System.out.println(Thread.currentThread().getName() + "说：" + a);
+                    try {
+                        System.out.println(Thread.currentThread().getName() + "说：等着b买汉堡！");
+
+                        String b = exchanger.exchange(a);
+                        System.out.println(Thread.currentThread().getName() + "说：我拿到了汉堡！");
+                        TimeUnit.SECONDS.sleep(5);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                 }
+//                String a = "我买了鸡翅包饭！";
+//                System.out.println(Thread.currentThread().getName() + "说：" + a);
+//                try {
+//                    System.out.println(Thread.currentThread().getName() + "说：等着b买汉堡！");
+//                    TimeUnit.SECONDS.sleep(5);
+//                    String b = exchanger.exchange(a);
+//                    System.out.println(Thread.currentThread().getName() + "说：我拿到了汉堡！");
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
             }
         }).start();
 
